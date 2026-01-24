@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -17,6 +17,7 @@
       text-align: center;
     }
     .card {
+      max-width: 520px;
       padding: 40px 50px;
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.08);
@@ -30,11 +31,12 @@
     }
     p {
       margin-top: 12px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.9;
+      line-height: 1.6;
     }
     .tag {
-      margin-top: 20px;
+      margin-top: 22px;
       display: inline-block;
       padding: 8px 18px;
       border-radius: 999px;
@@ -43,12 +45,31 @@
       font-weight: 600;
       letter-spacing: 0.5px;
     }
+    .highlight {
+      margin-top: 18px;
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+    .highlight span {
+      color: #00ffd5;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Avinash Sahu</h1>
-    <p>Engineer • Learner • Builder</p>
+
+    <p>
+      Mechanical Engineer • Engine Calibration •  
+      AI & ML Enthusiast • Physics Lover • Builder
+    </p>
+
+    <p class="highlight">
+      🏃 Half Marathon Finisher —  
+      <span>21.1 km in 2h 21m</span>
+    </p>
+
     <div class="tag">Vibe Coder</div>
   </div>
 </body>
