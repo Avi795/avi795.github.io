@@ -45,14 +45,11 @@
       font-weight: 600;
       letter-spacing: 0.5px;
     }
-    .highlight {
-      margin-top: 18px;
-      font-size: 1rem;
-      opacity: 0.95;
-    }
-    .highlight span {
+    .link {
       color: #00ffd5;
+      cursor: pointer;
       font-weight: 600;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -61,16 +58,65 @@
     <h1>Avinash Sahu</h1>
 
     <p>
-      Mechanical Engineer • Engine Calibration •  
-      AI & ML Enthusiast • Physics Lover • Builder
-    </p>
-
-    <p class="highlight">
-      🏃 Half Marathon Finisher —  
-      <span>21.1 km in 2h 21m</span>
+      Mechanical Engineer • Calibration Engineer •  
+      AI & ML Enthusiast •
+      <span class="link" onclick="openInterests()">Interests</span>
     </p>
 
     <div class="tag">Vibe Coder</div>
   </div>
+
+  <script>
+    function openInterests() {
+      const win = window.open("", "_blank", "width=600,height=500");
+
+      win.document.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <title>Interests</title>
+          <style>
+            body {
+              margin: 0;
+              padding: 30px;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              background: linear-gradient(135deg, #203a43, #2c5364);
+              color: #ffffff;
+            }
+            h2 {
+              color: #00ffd5;
+              margin-top: 0;
+            }
+            ul {
+              line-height: 1.8;
+            }
+            .card {
+              margin-top: 20px;
+              padding: 18px;
+              border-radius: 12px;
+              background: rgba(255,255,255,0.08);
+            }
+          </style>
+        </head>
+        <body>
+          <h2>My Interests</h2>
+          <ul>
+            <li>Artificial Intelligence & Machine Learning</li>
+            <li>Physics & Mathematics in real-world systems</li>
+            <li>Building practical engineering products</li>
+            <li>Fitness & endurance training</li>
+          </ul>
+
+          <div class="card">
+            🏃 <strong>Half Marathon Finisher</strong><br>
+            21.1 km in <strong>2 hours 21 minutes</strong>
+          </div>
+        </body>
+        </html>
+      `);
+    }
+  </script>
 </body>
 </html>
+
