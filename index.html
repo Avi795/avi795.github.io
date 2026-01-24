@@ -60,75 +60,10 @@
     <p>
       Mechanical Engineer • Calibration Engineer •  
       AI & ML Enthusiast •
-      <span class="link" onclick="openInterests()">Interests</span>
+      <a class="link" href="interests.html" target="_blank">Interests</a>
     </p>
 
     <div class="tag">Vibe Coder</div>
   </div>
-
-  <script>
-    function openInterests() {
-      const win = window.open("", "_blank", "width=600,height=500");
-
-      win.document.write(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <title>Interests</title>
-          <style>
-            body {
-              margin: 0;
-              padding: 30px;
-              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              background: linear-gradient(135deg, #203a43, #2c5364);
-              color: #ffffff;
-            }
-            h2 {
-              color: #00ffd5;
-              margin-top: 0;
-            }
-            ul {
-              line-height: 1.8;
-            }
-            .card {
-              margin-top: 20px;
-              padding: 18px;
-              border-radius: 12px;
-              background: rgba(255,255,255,0.08);
-            }
-            .back {
-              margin-top: 30px;
-              padding: 10px 18px;
-              border-radius: 999px;
-              background: #00ffd5;
-              color: #002b2b;
-              font-weight: 600;
-              border: none;
-              cursor: pointer;
-            }
-          </style>
-        </head>
-        <body>
-          <h2>My Interests</h2>
-
-          <ul>
-            <li>Artificial Intelligence & Machine Learning</li>
-            <li>Physics & Mathematics in real-world systems</li>
-            <li>Building practical engineering products</li>
-            <li>Fitness & endurance training</li>
-          </ul>
-
-          <div class="card">
-            🏃 <strong>Half Marathon Finisher</strong><br>
-            21.1 km in <strong>2 hours 21 minutes</strong>
-          </div>
-
-          <button class="back" onclick="window.close()">⬅ Back to Home</button>
-        </body>
-        </html>
-      `);
-    }
-  </script>
 </body>
 </html>
