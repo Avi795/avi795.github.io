@@ -51,12 +51,11 @@
       font-weight: 600;
       text-decoration: underline;
     }
-    .section-title {
-      margin-top: 28px;
+    .mech-link {
       color: #00ffd5;
       cursor: pointer;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      text-decoration: underline;
     }
     .mech-content {
       margin-top: 14px;
@@ -72,16 +71,13 @@
     <h1>Avinash Sahu</h1>
 
     <p>
-      Mechanical Engineer • Calibration Engineer •  
+      <span class="mech-link" onclick="toggleMech()">Mechanical Engineer</span> •
+      Calibration Engineer •  
       AI & ML Enthusiast •
       <a class="link" href="interests.html" target="_blank">Interests</a>
     </p>
 
-    <!-- Mechanical Engineering Click Section -->
-    <div class="section-title" onclick="toggleMech()">
-      ⚙️ Mechanical Engineering
-    </div>
-
+    <!-- Hidden Mechanical Engineering Technical Intro -->
     <div class="mech-content" id="mechContent">
       <p>
         I hold a <strong>Master’s degree (M.Tech) in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
@@ -96,7 +92,7 @@
       <p>
         This experience strengthened my understanding of
         <strong>tribology, fluid mechanics, and applied mathematics</strong>,
-        and helped me develop a strong analytical and research-oriented approach.
+        and helped me develop a strong analytical and research-oriented mindset.
       </p>
     </div>
 
@@ -106,9 +102,10 @@
   <script>
     function toggleMech() {
       const content = document.getElementById("mechContent");
-      content.style.display = content.style.display === "none" || content.style.display === ""
-        ? "block"
-        : "none";
+      content.style.display =
+        content.style.display === "none" || content.style.display === ""
+          ? "block"
+          : "none";
     }
   </script>
 </body>
