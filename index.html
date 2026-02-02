@@ -31,7 +31,7 @@
     }
     p {
       margin-top: 12px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       opacity: 0.9;
       line-height: 1.6;
     }
@@ -51,6 +51,20 @@
       font-weight: 600;
       text-decoration: underline;
     }
+    .section-title {
+      margin-top: 28px;
+      color: #00ffd5;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .mech-content {
+      margin-top: 14px;
+      display: none;
+      font-size: 0.95rem;
+      opacity: 0.92;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
@@ -63,7 +77,39 @@
       <a class="link" href="interests.html" target="_blank">Interests</a>
     </p>
 
+    <!-- Mechanical Engineering Click Section -->
+    <div class="section-title" onclick="toggleMech()">
+      ⚙️ Mechanical Engineering
+    </div>
+
+    <div class="mech-content" id="mechContent">
+      <p>
+        I hold a <strong>Master’s degree (M.Tech) in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
+        During my postgraduate studies, I worked on an M.Tech project focused on
+        <strong>porous bearing analysis</strong>.
+      </p>
+      <p>
+        My work involved studying lubrication mechanisms in porous media,
+        analyzing fluid flow characteristics, and evaluating bearing performance
+        parameters such as load-carrying capacity and stability.
+      </p>
+      <p>
+        This experience strengthened my understanding of
+        <strong>tribology, fluid mechanics, and applied mathematics</strong>,
+        and helped me develop a strong analytical and research-oriented approach.
+      </p>
+    </div>
+
     <div class="tag">Vibe Coder</div>
   </div>
+
+  <script>
+    function toggleMech() {
+      const content = document.getElementById("mechContent");
+      content.style.display = content.style.display === "none" || content.style.display === ""
+        ? "block"
+        : "none";
+    }
+  </script>
 </body>
 </html>
