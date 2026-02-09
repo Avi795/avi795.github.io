@@ -60,7 +60,7 @@
     }
 
     .mech-content {
-      margin-top: 16px;
+      margin-top: 18px;
       display: none;
       font-size: 0.95rem;
       opacity: 0.92;
@@ -86,12 +86,12 @@
 
     <p>
       <span class="mech-link" onclick="toggleMech()">Mechanical Engineer</span> •
-      Calibration Engineer •  
+      <span class="mech-link" onclick="toggleCalib()">Calibration Engineer</span> •
       AI & ML Enthusiast •
       <a class="link" href="./interests.html">Interests</a>
     </p>
 
-    <!-- Mechanical Engineering Technical Introduction -->
+    <!-- Mechanical Engineer Section -->
     <div class="mech-content" id="mechContent">
       <p>
         I hold a <strong>Master’s degree (M.Tech) in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
@@ -120,14 +120,58 @@
       <a class="back" href="index.html">⬅ Back to Home</a>
     </div>
 
+    <!-- Calibration Engineer Section -->
+    <div class="mech-content" id="calibContent">
+      <p>
+        I work as a <strong>Calibration Engineer</strong> in the automotive domain,
+        focusing on <strong>engine and vehicle-level calibration</strong>
+        to achieve optimal performance, drivability, emissions compliance,
+        and system reliability.
+      </p>
+
+      <p>
+        I was involved in the calibration of the
+        <strong>world’s first bi-fuel motorcycle (CNG + Petrol) – Bajaj Freedom 125</strong>.
+        This required precise calibration across multiple operating conditions,
+        ensuring smooth fuel switching, efficient combustion,
+        and consistent rider experience.
+      </p>
+
+      <p>
+        My responsibilities include calibration of
+        <strong>fueling, ignition, air management, sensors, and EMS control strategies</strong>,
+        supported by extensive data analysis, validation, and real-world testing.
+      </p>
+
+      <p>
+        This role has strengthened my system-level thinking and
+        practical understanding of how software, hardware,
+        and real-world constraints interact in automotive engineering.
+      </p>
+
+      <a class="back" href="index.html">⬅ Back to Home</a>
+    </div>
+
     <div class="tag">Vibe Coder</div>
   </div>
 
   <script>
     function toggleMech() {
-      const content = document.getElementById("mechContent");
-      content.style.display =
-        content.style.display === "none" || content.style.display === ""
+      const mech = document.getElementById("mechContent");
+      const calib = document.getElementById("calibContent");
+      calib.style.display = "none";
+      mech.style.display =
+        mech.style.display === "none" || mech.style.display === ""
+          ? "block"
+          : "none";
+    }
+
+    function toggleCalib() {
+      const mech = document.getElementById("mechContent");
+      const calib = document.getElementById("calibContent");
+      mech.style.display = "none";
+      calib.style.display =
+        calib.style.display === "none" || calib.style.display === ""
           ? "block"
           : "none";
     }
