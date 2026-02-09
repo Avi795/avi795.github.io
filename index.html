@@ -12,76 +12,165 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: radial-gradient(circle at top, #111111, #000000);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #ffffff;
+      color: #eaeaea;
       text-align: center;
     }
 
     .card {
-      max-width: 520px;
-      padding: 40px 50px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
+      max-width: 560px;
+      padding: 40px 55px 50px;
+      border-radius: 18px;
+      background: rgba(20, 20, 20, 0.95);
+      box-shadow:
+        0 0 40px rgba(255, 215, 0, 0.08),
+        0 30px 80px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      backdrop-filter: blur(12px);
+    }
+
+    /* Terminal */
+    .terminal {
+      background: #000000;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+      text-align: left;
+      font-family: "Courier New", monospace;
+      font-size: 0.95rem;
+      box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.15);
+      border: 1px solid rgba(255, 215, 0, 0.25);
+    }
+
+    .terminal::before {
+      content: "● ● ●";
+      display: block;
+      color: #ffd700;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      letter-spacing: 4px;
+      opacity: 0.8;
+    }
+
+    .terminal-text {
+      color: #ffd700;
+      white-space: pre-line;
+      line-height: 1.6;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.1em;
+      background: #ffd700;
+      margin-left: 3px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
 
     h1 {
       margin: 0;
-      font-size: 3rem;
-      letter-spacing: 1px;
+      font-size: 3.1rem;
+      letter-spacing: 1.5px;
+      color: #f5f5f5;
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
     }
 
     p {
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 1.05rem;
-      opacity: 0.9;
-      line-height: 1.6;
+      opacity: 0.92;
+      line-height: 1.7;
+      color: #d0d0d0;
     }
 
     .tag {
-      margin-top: 22px;
+      margin-top: 26px;
       display: inline-block;
-      padding: 8px 18px;
+      padding: 9px 22px;
       border-radius: 999px;
-      background: #00ffd5;
-      color: #002b2b;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #ffd700, #ffb700);
+      color: #000000;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
     }
 
     .link,
     .mech-link {
-      color: #00ffd5;
+      color: #ffd700;
       cursor: pointer;
       font-weight: 600;
-      text-decoration: underline;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.5);
+      transition: all 0.25s ease;
+    }
+
+    .mech-link:hover,
+    .link:hover {
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
     }
 
     .mech-content {
-      margin-top: 18px;
+      margin-top: 22px;
       display: none;
-      font-size: 0.95rem;
-      opacity: 0.92;
+      font-size: 0.96rem;
+      opacity: 0.95;
       text-align: left;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .mech-content strong {
+      color: #ffd700;
     }
 
     .back {
-      margin-top: 20px;
+      margin-top: 22px;
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 24px;
       border-radius: 999px;
-      background: #00ffd5;
-      color: #002b2b;
+      background: transparent;
+      color: #ffd700;
       font-weight: 600;
       text-decoration: none;
+      border: 1px solid rgba(255, 215, 0, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .back:hover {
+      background: #ffd700;
+      color: #000000;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="card">
+
+    <!-- Terminal Intro -->
+    <div class="terminal">
+      <div class="terminal-text" id="terminalText"></div><span class="cursor"></span>
+    </div>
+
     <h1>Avinash Sahu</h1>
 
     <p>
@@ -91,89 +180,67 @@
       <a class="link" href="./interests.html">Interests</a>
     </p>
 
-    <!-- Mechanical Engineer Section -->
+    <!-- Mechanical Engineer -->
     <div class="mech-content" id="mechContent">
       <p>
         I hold a <strong>Master’s degree (M.Tech) in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
-        During my postgraduate studies, I worked on an M.Tech project focused on
-        <strong>porous bearing analysis</strong>
-        (<a
-          class="link"
-          href="https://link.springer.com/chapter/10.1007/978-981-99-4270-1_58"
-          target="_blank"
-          rel="noopener noreferrer"
-        >click here</a>).
+        My work focused on <strong>porous bearing analysis</strong>
+        (<a class="link" href="https://link.springer.com/chapter/10.1007/978-981-99-4270-1_58" target="_blank">view publication</a>).
       </p>
 
       <p>
-        My work involved studying lubrication mechanisms in porous media,
-        analyzing fluid flow characteristics, and evaluating bearing performance
-        parameters such as load-carrying capacity and stability.
+        This strengthened my foundation in
+        <strong>tribology, fluid mechanics, and applied mathematics</strong>.
       </p>
 
-      <p>
-        This experience strengthened my understanding of
-        <strong>tribology, fluid mechanics, and applied mathematics</strong>,
-        and helped me develop a strong analytical and research-oriented mindset.
-      </p>
-
-      <a class="back" href="index.html">⬅ Back to Home</a>
+      <a class="back" href="index.html">⬅ Back</a>
     </div>
 
-    <!-- Calibration Engineer Section -->
+    <!-- Calibration Engineer -->
     <div class="mech-content" id="calibContent">
       <p>
-        I work as a <strong>Calibration Engineer</strong> in the automotive domain,
-        focusing on <strong>engine and vehicle-level calibration</strong>
-        to achieve optimal performance, drivability, emissions compliance,
-        and system reliability.
+        I work as a <strong>Calibration Engineer</strong> in the automotive domain.
       </p>
 
       <p>
         I was involved in the calibration of the
         <strong>world’s first bi-fuel motorcycle (CNG + Petrol) – Bajaj Freedom 125</strong>.
-        This required precise calibration across multiple operating conditions,
-        ensuring smooth fuel switching, efficient combustion,
-        and consistent rider experience.
       </p>
 
       <p>
-        My responsibilities include calibration of
-        <strong>fueling, ignition, air management, sensors, and EMS control strategies</strong>,
-        supported by extensive data analysis, validation, and real-world testing.
+        My work spans <strong>fueling, ignition, air management, sensors, and EMS strategies</strong>.
       </p>
 
-      <p>
-        This role has strengthened my system-level thinking and
-        practical understanding of how software, hardware,
-        and real-world constraints interact in automotive engineering.
-      </p>
-
-      <a class="back" href="index.html">⬅ Back to Home</a>
+      <a class="back" href="index.html">⬅ Back</a>
     </div>
 
     <div class="tag">Vibe Coder</div>
   </div>
 
   <script>
+    const text = "I work in silence.\nLet my work make the noise.";
+    let index = 0;
+    const speed = 55;
+
+    function typeText() {
+      if (index < text.length) {
+        document.getElementById("terminalText").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeText, speed);
+      }
+    }
+    typeText();
+
     function toggleMech() {
+      document.getElementById("calibContent").style.display = "none";
       const mech = document.getElementById("mechContent");
-      const calib = document.getElementById("calibContent");
-      calib.style.display = "none";
-      mech.style.display =
-        mech.style.display === "none" || mech.style.display === ""
-          ? "block"
-          : "none";
+      mech.style.display = mech.style.display === "block" ? "none" : "block";
     }
 
     function toggleCalib() {
-      const mech = document.getElementById("mechContent");
+      document.getElementById("mechContent").style.display = "none";
       const calib = document.getElementById("calibContent");
-      mech.style.display = "none";
-      calib.style.display =
-        calib.style.display === "none" || calib.style.display === ""
-          ? "block"
-          : "none";
+      calib.style.display = calib.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
