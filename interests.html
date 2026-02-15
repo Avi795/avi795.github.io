@@ -6,61 +6,88 @@
   <title>Interests | Avinash Sahu</title>
 
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #203a43, #2c5364);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #ffffff;
-    }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, #111111, #000000);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eaeaea;
+  }
 
-    .card {
-      max-width: 600px;
-      padding: 40px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-    }
+  .card {
+    max-width: 600px;
+    padding: 40px 50px;
+    border-radius: 18px;
+    background: rgba(20, 20, 20, 0.95);
+    box-shadow:
+      0 0 40px rgba(255, 215, 0, 0.08),
+      0 30px 80px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    backdrop-filter: blur(12px);
+  }
 
-    h2 {
-      margin-top: 0;
-      color: #00ffd5;
-    }
+  h2 {
+    margin-top: 0;
+    color: #ffd700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  }
 
-    ul {
-      line-height: 1.8;
-      padding-left: 20px;
-    }
+  ul {
+    line-height: 1.9;
+    padding-left: 20px;
+    opacity: 0.95;
+  }
 
-    .highlight {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-    }
+  ul li::marker {
+    color: #ffd700;
+  }
 
-    .proof {
-      color: #00ffd5;
-      font-weight: 600;
-      margin-left: 8px;
-      text-decoration: underline;
-    }
+  .highlight {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 14px;
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+  }
 
-    .back {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 999px;
-      background: #00ffd5;
-      color: #002b2b;
-      font-weight: 600;
-      text-decoration: none;
-    }
-  </style>
+  .proof {
+    color: #ffd700;
+    font-weight: 600;
+    margin-left: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.5);
+    transition: all 0.25s ease;
+  }
+
+  .proof:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+
+  .back {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: transparent;
+    color: #ffd700;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  .back:hover {
+    background: #ffd700;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+</style>
 </head>
 
 <body>
