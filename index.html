@@ -218,30 +218,52 @@
   </div>
 
   <script>
-    const text = "I work in silence.\nLet my work make the noise.";
-    let index = 0;
-    const speed = 55;
+  // Motivational Quotes Array
+  const quotes = [
+    "Discipline beats motivation.\nEvery single time.",
+    "You don’t rise to the level of goals.\nYou fall to the level of systems.",
+    "Small progress daily.\nMassive results yearly.",
+    "Master fundamentals.\nDominate the game.",
+    "Build in silence.\nShock them later.",
+    "Consistency creates legends.",
+    "No zero days.\nEver.",
+    "Comfort is the enemy of growth.",
+    "Stay dangerous.\nStay learning.",
+    "Execution > Ideas."
+  ];
 
-    function typeText() {
-      if (index < text.length) {
-        document.getElementById("terminalText").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeText, speed);
-      }
-    }
-    typeText();
+  // Get today's quote based on date
+  function getDailyQuote() {
+    const today = new Date();
+    const dayNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
+    return quotes[dayNumber % quotes.length];
+  }
 
-    function toggleMech() {
-      document.getElementById("calibContent").style.display = "none";
-      const mech = document.getElementById("mechContent");
-      mech.style.display = mech.style.display === "block" ? "none" : "block";
-    }
+  const text = getDailyQuote();
+  let index = 0;
+  const speed = 55;
 
-    function toggleCalib() {
-      document.getElementById("mechContent").style.display = "none";
-      const calib = document.getElementById("calibContent");
-      calib.style.display = calib.style.display === "block" ? "none" : "block";
+  function typeText() {
+    if (index < text.length) {
+      document.getElementById("terminalText").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeText, speed);
     }
-  </script>
+  }
+
+  typeText();
+
+  function toggleMech() {
+    document.getElementById("calibContent").style.display = "none";
+    const mech = document.getElementById("mechContent");
+    mech.style.display = mech.style.display === "block" ? "none" : "block";
+  }
+
+  function toggleCalib() {
+    document.getElementById("mechContent").style.display = "none";
+    const calib = document.getElementById("calibContent");
+    calib.style.display = calib.style.display === "block" ? "none" : "block";
+  }
+</script>
 </body>
 </html>
