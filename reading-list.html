@@ -32,6 +32,7 @@
     h2 {
       margin-top: 0;
       color: #ffd700;
+      letter-spacing: 1px;
     }
 
     ul {
@@ -39,15 +40,21 @@
       padding-left: 20px;
     }
 
+    ul li::marker {
+      color: #ffd700;
+    }
+
     a {
       color: #ffd700;
       text-decoration: none;
       border-bottom: 1px solid rgba(255, 215, 0, 0.5);
+      transition: all 0.25s ease;
     }
 
     a:hover {
       color: #ffffff;
       border-bottom-color: #ffffff;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
     }
 
     .back {
@@ -60,11 +67,18 @@
       font-weight: 600;
       text-decoration: none;
       border: 1px solid rgba(255, 215, 0, 0.6);
+      transition: all 0.3s ease;
     }
 
     .back:hover {
       background: #ffd700;
       color: #000000;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 25px;
+      }
     }
   </style>
 </head>
@@ -80,6 +94,16 @@
              target="_blank"
              rel="noopener noreferrer">
             Go All The Way – Charles Bukowski
+          </a>
+        </strong>
+      </li>
+
+      <li>
+        <strong>
+          <a href="https://kavitakosh.org/kk/कृष्ण_की_चेतावनी_/_रामधारी_सिंह_%22दिनकर%22"
+             target="_blank"
+             rel="noopener noreferrer">
+            कृष्ण की चेतावनी – रामधारी सिंह "दिनकर"
           </a>
         </strong>
       </li>
