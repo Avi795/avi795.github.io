@@ -19,27 +19,27 @@
     }
 
     .card {
-      max-width: 640px;
-      padding: 40px 55px 55px;
-      border-radius: 20px;
+      max-width: 620px;
+      padding: 40px 55px 50px;
+      border-radius: 18px;
       background: rgba(20, 20, 20, 0.95);
       box-shadow:
-        0 0 50px rgba(255, 215, 0, 0.08),
-        0 40px 100px rgba(0, 0, 0, 0.9);
+        0 0 40px rgba(255, 215, 0, 0.08),
+        0 30px 80px rgba(0, 0, 0, 0.9);
       border: 1px solid rgba(255, 215, 0, 0.15);
     }
 
     /* Terminal */
     .terminal {
       background: #000;
-      border-radius: 14px;
+      border-radius: 12px;
       padding: 18px 20px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
       text-align: left;
       font-family: "Courier New", monospace;
       font-size: 0.95rem;
-      box-shadow: inset 0 0 25px rgba(255, 215, 0, 0.2);
-      border: 1px solid rgba(255, 215, 0, 0.3);
+      box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.15);
+      border: 1px solid rgba(255, 215, 0, 0.25);
     }
 
     .terminal::before {
@@ -73,48 +73,36 @@
     /* Name */
     h1 {
       margin: 0;
-      font-size: 3.1rem;
+      font-size: 3rem;
       color: #ffffff;
       letter-spacing: 1px;
     }
 
-    /* Identity Badges */
+    /* Identity Section */
     .identity {
-      margin-top: 18px;
+      margin-top: 10px;
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
-    .badge {
-      padding: 10px 22px;
-      border-radius: 999px;
+    .role {
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 1rem;
       letter-spacing: 0.8px;
-      transition: 0.3s ease;
     }
 
-    .badge.vibe {
-      background: linear-gradient(135deg, #ffd700, #ffb700);
-      color: #000;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    .vibe {
+      color: #ffd700;
     }
 
-    .badge.polymath {
-      background: linear-gradient(135deg, #4da6ff, #1f6fff);
-      color: #fff;
-      box-shadow: 0 0 20px rgba(77, 166, 255, 0.6);
-    }
-
-    .badge:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 30px rgba(255,255,255,0.6);
+    .polymath {
+      color: #9ecbff;
     }
 
     p {
-      margin-top: 22px;
+      margin-top: 18px;
       font-size: 1.05rem;
       line-height: 1.7;
       color: #d0d0d0;
@@ -167,190 +155,8 @@
     <h1>Avinash Sahu</h1>
 
     <div class="identity">
-      <div class="badge vibe">Vibe Coder</div>
-      <div class="badge polymath">Designing a life as a polymath</div>
-    </div>
-
-    <p>
-      <span class="mech-link" onclick="toggleMech()">Mechanical Engineer</span> •
-      <span class="mech-link" onclick="toggleCalib()">Calibration Engineer</span> •
-      AI & ML Enthusiast •
-      <a class="link" href="./interests.html">Interests</a>
-    </p>
-
-    <div class="mech-content" id="mechContent">
-      <p>
-        I hold a <strong>M.Tech in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
-      </p>
-      <p>
-        Research focus: <strong>Porous bearing analysis</strong>.
-      </p>
-    </div>
-
-    <div class="mech-content" id="calibContent">
-      <p>
-        Working as a <strong>Calibration Engineer</strong> in automotive domain.
-      </p>
-      <p>
-        Contributed to calibration of <strong>Bajaj Freedom 125 (CNG + Petrol)</strong>.
-      </p>
-    </div>
-
-  </div>
-
-<script>
-  const lifeMotto =
-    "Life Motto:\nआदि अनादि काल से रही यही परम्परा |\nकायरों ने दुःख सहे हैं, वीर भोग्या वसुंधरा ||";
-
-  const quotes = [
-    "Discipline beats motivation.",
-    "Master fundamentals. Dominate the game.",
-    "Consistency creates legends.",
-    "Stay dangerous. Stay learning.",
-    "Execution > Ideas."
-  ];
-
-  function getDailyQuote() {
-    const today = new Date();
-    const dayNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
-    return quotes[dayNumber % quotes.length];
-  }
-
-  const terminal = document.getElementById("terminalText");
-  let index = 0;
-  const speed = 40;
-
-  const fullText =
-    lifeMotto +
-    "\n\n-----------------------------\n\nToday's Quote:\n\n" +
-    getDailyQuote();
-
-  function typeText() {
-    if (index < fullText.length) {
-      terminal.innerHTML += fullText.charAt(index);
-      index++;
-      setTimeout(typeText, speed);
-    }
-  }
-
-  typeText();
-
-  function toggleMech() {
-    document.getElementById("calibContent").style.display = "none";
-    const mech = document.getElementById("mechContent");
-    mech.style.display = mech.style.display === "block" ? "none" : "block";
-  }
-
-  function toggleCalib() {
-    document.getElementById("mechContent").style.display = "none";
-    const calib = document.getElementById("calibContent");
-    calib.style.display = calib.style.display === "block" ? "none" : "block";
-  }
-</script>
-
-</body>
-</html>      text-align: left;
-      font-family: "Courier New", monospace;
-      font-size: 0.95rem;
-      box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.15);
-      border: 1px solid rgba(255, 215, 0, 0.25);
-    }
-
-    .terminal::before {
-      content: "● ● ●";
-      display: block;
-      color: #ffd700;
-      margin-bottom: 10px;
-      letter-spacing: 4px;
-    }
-
-    .terminal-text {
-      color: #ffd700;
-      white-space: pre-line;
-      line-height: 1.6;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 1.1em;
-      background: #ffd700;
-      margin-left: 3px;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: #f5f5f5;
-    }
-
-    .subtitle {
-      margin-top: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #ffd700;
-    }
-
-    p {
-      margin-top: 16px;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #d0d0d0;
-    }
-
-    .link,
-    .mech-link {
-      color: #ffd700;
-      cursor: pointer;
-      font-weight: 600;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.5);
-      transition: 0.3s ease;
-    }
-
-    .mech-link:hover,
-    .link:hover {
-      color: #ffffff;
-      border-bottom-color: #ffffff;
-    }
-
-    .mech-content {
-      margin-top: 22px;
-      display: none;
-      font-size: 0.96rem;
-      text-align: left;
-      animation: fadeIn 0.4s ease;
-    }
-
-    .mech-content strong {
-      color: #ffd700;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-  </style>
-</head>
-
-<body>
-  <div class="card">
-
-    <div class="terminal">
-      <div class="terminal-text" id="terminalText"></div>
-      <span class="cursor"></span>
-    </div>
-
-    <h1>Avinash Sahu</h1>
-    <div class="subtitle">
-      Vibe Coder | Designing a life as a polymath
+      <div class="role vibe">Vibe Coder</div>
+      <div class="role polymath">Designing a life as a polymath</div>
     </div>
 
     <p>
@@ -366,8 +172,7 @@
         I hold a <strong>Master’s degree (M.Tech) in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
       </p>
       <p>
-        My research focused on <strong>porous bearing analysis</strong>,
-        published as part of my M.Tech work.
+        My research focused on <strong>porous bearing analysis</strong>.
       </p>
       <p>
         📄 <a class="link"
@@ -396,13 +201,8 @@
 
   const quotes = [
     "Discipline beats motivation.\nEvery single time.",
-    "You don’t rise to the level of goals.\nYou fall to the level of systems.",
-    "Small progress daily.\nMassive results yearly.",
     "Master fundamentals.\nDominate the game.",
-    "Build in silence.\nShock them later.",
     "Consistency creates legends.",
-    "No zero days.\nEver.",
-    "Comfort is the enemy of growth.",
     "Stay dangerous.\nStay learning.",
     "Execution > Ideas."
   ];
