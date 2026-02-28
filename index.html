@@ -195,21 +195,59 @@
   </div>
 
 <script>
-  // LIFE MOTTO TERMINAL TEXT
-  const text = "Life Motto:\nआदि अनादि काल से रही यही परम्परा |\nकायरों ने दुःख सहे हैं, वीर भोग्या वसुंधरा ||";
+  // =========================
+  // LIFE MOTTO
+  // =========================
+  const lifeMotto = "Life Motto:\nआदि अनादि काल से रही यही परम्परा l\nकायरों ने दुःख सहे हैं, वीर भोग्या वसुंधरा ll";
 
-  let index = 0;
-  const speed = 55;
+  // =========================
+  // DAILY QUOTES
+  // =========================
+  const quotes = [
+    "Discipline beats motivation.\nEvery single time.",
+    "You don’t rise to the level of goals.\nYou fall to the level of systems.",
+    "Small progress daily.\nMassive results yearly.",
+    "Master fundamentals.\nDominate the game.",
+    "Build in silence.\nShock them later.",
+    "Consistency creates legends.",
+    "No zero days.\nEver.",
+    "Comfort is the enemy of growth.",
+    "Stay dangerous.\nStay learning.",
+    "Execution > Ideas."
+  ];
 
-  function typeText() {
-    if (index < text.length) {
-      document.getElementById("terminalText").innerHTML += text.charAt(index);
-      index++;
-      setTimeout(typeText, speed);
-    }
+  function getDailyQuote() {
+    const today = new Date();
+    const dayNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
+    return quotes[dayNumber % quotes.length];
   }
 
-  typeText();
+  const terminal = document.getElementById("terminalText");
+  let index = 0;
+  const speed = 45;
+
+  function typeText(text, callback) {
+    index = 0;
+    terminal.innerHTML = "";
+
+    function typing() {
+      if (index < text.length) {
+        terminal.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typing, speed);
+      } else if (callback) {
+        setTimeout(callback, 1500);
+      }
+    }
+
+    typing();
+  }
+
+  // Start with Life Motto
+  typeText(lifeMotto, function () {
+    // After motto, show daily quote
+    typeText(getDailyQuote());
+  });
 
   function toggleMech() {
     document.getElementById("calibContent").style.display = "none";
