@@ -30,7 +30,6 @@
       backdrop-filter: blur(12px);
     }
 
-    /* Terminal */
     .terminal {
       background: #000000;
       border-radius: 12px;
@@ -151,14 +150,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -166,7 +159,6 @@
 <body>
   <div class="card">
 
-    <!-- Terminal Intro -->
     <div class="terminal">
       <div class="terminal-text" id="terminalText"></div><span class="cursor"></span>
     </div>
@@ -180,66 +172,32 @@
       <a class="link" href="./interests.html">Interests</a>
     </p>
 
-    <!-- Mechanical Engineer -->
     <div class="mech-content" id="mechContent">
       <p>
         I hold a <strong>Master’s degree (M.Tech) in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
-        My work focused on <strong>porous bearing analysis</strong>
-        (<a class="link" href="https://link.springer.com/chapter/10.1007/978-981-99-4270-1_58" target="_blank">view publication</a>).
+        My work focused on <strong>porous bearing analysis</strong>.
       </p>
-
-      <p>
-        This strengthened my foundation in
-        <strong>tribology, fluid mechanics, and applied mathematics</strong>.
-      </p>
-
       <a class="back" href="index.html">⬅ Back</a>
     </div>
 
-    <!-- Calibration Engineer -->
     <div class="mech-content" id="calibContent">
       <p>
         I work as a <strong>Calibration Engineer</strong> in the automotive domain.
       </p>
-
       <p>
         I was involved in the calibration of the
         <strong>world’s first bi-fuel motorcycle (CNG + Petrol) – Bajaj Freedom 125</strong>.
       </p>
-
-      <p>
-        My work spans <strong>fueling, ignition, air management, sensors, and EMS strategies</strong>.
-      </p>
-
       <a class="back" href="index.html">⬅ Back</a>
     </div>
 
     <div class="tag">Vibe Coder</div>
   </div>
 
-  <script>
-  // Motivational Quotes Array
-  const quotes = [
-    "Discipline beats motivation.\nEvery single time.",
-    "You don’t rise to the level of goals.\nYou fall to the level of systems.",
-    "Small progress daily.\nMassive results yearly.",
-    "Master fundamentals.\nDominate the game.",
-    "Build in silence.\nShock them later.",
-    "Consistency creates legends.",
-    "No zero days.\nEver.",
-    "Comfort is the enemy of growth.",
-    "Stay dangerous.\nStay learning.",
-    "Execution > Ideas."
-  ];
+<script>
+  // LIFE MOTTO TERMINAL TEXT
+  const text = "Life Motto:\nआदि अनादि काल से रही यही परम्परा l\nकायरों ने दुःख सहे हैं, वीर भोग्या वसुंधरा ll";
 
-  // Get today's quote based on date
-  function getDailyQuote() {
-    const today = new Date();
-    const dayNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
-    return quotes[dayNumber % quotes.length];
-  }
-
-  const text = getDailyQuote();
   let index = 0;
   const speed = 55;
 
@@ -265,5 +223,6 @@
     calib.style.display = calib.style.display === "block" ? "none" : "block";
   }
 </script>
+
 </body>
 </html>
