@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avinash Sahu | Vibe Coder</title>
+  <title>Avinash Sahu | Designing a life as a polymath</title>
 
   <style>
     body {
@@ -74,10 +74,18 @@
 
     h1 {
       margin: 0;
-      font-size: 3.1rem;
+      font-size: 3rem;
       letter-spacing: 1.5px;
       color: #f5f5f5;
       text-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffd700;
+      opacity: 0.9;
     }
 
     p {
@@ -86,18 +94,6 @@
       opacity: 0.92;
       line-height: 1.7;
       color: #d0d0d0;
-    }
-
-    .tag {
-      margin-top: 26px;
-      display: inline-block;
-      padding: 9px 22px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ffd700, #ffb700);
-      color: #000000;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
     }
 
     .link,
@@ -164,6 +160,9 @@
     </div>
 
     <h1>Avinash Sahu</h1>
+    <div class="subtitle">
+      Vibe Coder | On the way to becoming a Polymath
+    </div>
 
     <p>
       <span class="mech-link" onclick="toggleMech()">Mechanical Engineer</span> •
@@ -172,50 +171,9 @@
       <a class="link" href="./interests.html">Interests</a>
     </p>
 
-    <div class="mech-content" id="mechContent">
-  <p>
-    I hold a <strong>Master’s degree (M.Tech) in Mechanical Engineering from IIT (ISM) Dhanbad</strong>.
-  </p>
-
-  <p>
-    My research focused on <strong>porous bearing analysis</strong>, 
-    which was published as part of my M.Tech work.
-  </p>
-
-  <p>
-    📄 <a class="link" 
-          href="https://link.springer.com/chapter/10.1007/978-981-99-4270-1_58" 
-          target="_blank">
-          View Published Research (Springer)
-        </a>
-  </p>
-
-  <a class="back" href="index.html">⬅ Back</a>
-  </div>
-
-    <div class="mech-content" id="calibContent">
-      <p>
-        I work as a <strong>Calibration Engineer</strong> in the automotive domain.
-      </p>
-      <p>
-        I was involved in the calibration of the
-        <strong>world’s first bi-fuel motorcycle (CNG + Petrol) – Bajaj Freedom 125</strong>.
-      </p>
-      <a class="back" href="index.html">⬅ Back</a>
-    </div>
-
-    <div class="tag">Vibe Coder</div>
-  </div>
-
 <script>
-  // =========================
-  // LIFE MOTTO
-  // =========================
   const lifeMotto = "Life Motto:\nआदि अनादि काल से रही यही परम्परा |\nकायरों ने दुःख सहे हैं, वीर भोग्या वसुंधरा ||";
 
-  // =========================
-  // DAILY QUOTES
-  // =========================
   const quotes = [
     "Discipline beats motivation.\nEvery single time.",
     "You don’t rise to the level of goals.\nYou fall to the level of systems.",
@@ -239,7 +197,6 @@
   let index = 0;
   const speed = 45;
 
-  // Combine BOTH texts
   const fullText =
     lifeMotto +
     "\n\n-----------------------------\n\n" +
@@ -255,18 +212,7 @@
   }
 
   typeText();
-
-  function toggleMech() {
-    document.getElementById("calibContent").style.display = "none";
-    const mech = document.getElementById("mechContent");
-    mech.style.display = mech.style.display === "block" ? "none" : "block";
-  }
-
-  function toggleCalib() {
-    document.getElementById("mechContent").style.display = "none";
-    const calib = document.getElementById("calibContent");
-    calib.style.display = calib.style.display === "block" ? "none" : "block";
-  }
 </script>
+
 </body>
 </html>
