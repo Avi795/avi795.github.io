@@ -143,7 +143,6 @@
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
   </style>
 </head>
 
@@ -165,7 +164,7 @@
     <p>
       <span class="mech-link" onclick="toggleMech()">Mechanical Engineer</span> •
       <span class="mech-link" onclick="toggleCalib()">Calibration Engineer</span> •
-      AI & ML Enthusiast •
+      <span class="mech-link" onclick="toggleAI()">AI & ML Enthusiast</span> •
       <a class="link" href="./interests.html">Interests</a>
     </p>
 
@@ -193,6 +192,23 @@
       </p>
       <p>
         Involved in calibration of the <strong>Bajaj Freedom 125 (CNG + Petrol), world's first bi-fuel bike</strong>.
+      </p>
+    </div>
+
+    <!-- AI & ML Section -->
+    <div class="mech-content" id="aiContent">
+      <p>
+        I build machine learning systems from scratch and deploy real applications.
+      </p>
+      <p>
+        🚀 <strong>Linear Regression Visualizer</strong> – Built using gradient descent (no sklearn), with live loss visualization.
+      </p>
+      <p>
+        🌍 <a class="link"
+          href="https://linear-regression-visualizer.streamlit.app"
+          target="_blank">
+          View Live Project
+        </a>
       </p>
     </div>
 
@@ -235,16 +251,28 @@
 
   typeText();
 
-  function toggleMech() {
+  function hideAllSections() {
+    document.getElementById("mechContent").style.display = "none";
     document.getElementById("calibContent").style.display = "none";
+    document.getElementById("aiContent").style.display = "none";
+  }
+
+  function toggleMech() {
+    hideAllSections();
     const mech = document.getElementById("mechContent");
     mech.style.display = mech.style.display === "block" ? "none" : "block";
   }
 
   function toggleCalib() {
-    document.getElementById("mechContent").style.display = "none";
+    hideAllSections();
     const calib = document.getElementById("calibContent");
     calib.style.display = calib.style.display === "block" ? "none" : "block";
+  }
+
+  function toggleAI() {
+    hideAllSections();
+    const ai = document.getElementById("aiContent");
+    ai.style.display = ai.style.display === "block" ? "none" : "block";
   }
 </script>
 
