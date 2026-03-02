@@ -57,13 +57,20 @@
     }
 
     .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 1.1em;
-      background: #ffd700;
-      margin-left: 3px;
-      animation: blink 1s infinite;
-    }
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+  margin-left: 6px;
+  background: #ffd700;
+  clip-path: polygon(
+    0% 60%, 15% 40%, 30% 60%,
+    45% 35%, 50% 50%,
+    55% 35%, 70% 60%,
+    85% 40%, 100% 60%,
+    80% 100%, 20% 100%
+  );
+  animation: blink 1s infinite;
+}
 
     @keyframes blink {
       0%, 50% { opacity: 1; }
